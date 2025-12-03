@@ -24,18 +24,18 @@ Post: A post made by a user in our system. Posts can be made by any user, and ar
 
 ### API 
 
-POST /posts 
+`POST /posts 
 {
     "content": { }
-}
+}`
 // -> 200 OK
-{
+`{
     "postId": // ...
-}
+}`
 
 PUT /users/[id]/followers
-{ } 
-// -> 200 OK
+`{ } 
+// -> 200 OK`
 
 
 GET /feed?pageSize={size}&cursor={timestamp?}
@@ -89,4 +89,7 @@ Unlike the Distributed Post Cache solution above, we can choose to have multiple
 Both solve the problem, but this solution means we have N times the throughput for a hot key without any additional coordination required.
 <img width="1350" height="764" alt="Screenshot 2025-12-03 at 5 27 31 PM" src="https://github.com/user-attachments/assets/baae0814-3563-4b89-941a-26da00d085ef" />
 
+
+References:
+ [Hello interview] (https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed). 
 
