@@ -100,5 +100,5 @@ Both solve the problem, but this solution means we have N times the throughput f
 
 
 References:
-Ref [Hello interview] (https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed). 
+[Hello interview](https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed). 
 
