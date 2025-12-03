@@ -24,25 +24,34 @@ Post: A post made by a user in our system. Posts can be made by any user, and ar
 
 ### API 
 
-`POST /posts 
+```
+POST /posts 
 {
     "content": { }
-}`
+}
 // -> 200 OK
-`{
+```
+
+
+```
+{
     "postId": // ...
-}`
+}
+```
 
+```
 PUT /users/[id]/followers
-`{ } 
-// -> 200 OK`
+{ } 
+// -> 200 OK
+```
 
-
+```
 GET /feed?pageSize={size}&cursor={timestamp?}
 {
     items: Post[],
     nextCursor: string
 }
+```
 
 
  ## 1. Users should be able to create posts.
@@ -91,5 +100,5 @@ Both solve the problem, but this solution means we have N times the throughput f
 
 
 References:
- [Hello interview] (https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed). 
+Ref [Hello interview] (https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed). 
 
