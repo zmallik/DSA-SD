@@ -2,13 +2,14 @@
 
 ## Functional Requirements
 ### Core Requirements
-Users should be able to create posts.
-Users should be able to friend/follow people.
-Users should be able to view a feed of posts from people they follow, in chronological order.
-Users should be able to page through their feed.
+1. Users should be able to create posts.
+2. Users should be able to friend/follow people.
+3. Users should be able to view a feed of posts from people they follow, in chronological order.
+4. Users should be able to page through their feed.
+
 Below the line (out of scope):
-Users should be able to like and comment on posts.
-Posts can be private or have restricted visibility.
+1. Users should be able to like and comment on posts.
+2. Posts can be private or have restricted visibility.
 
 ### Non-Functional Requirements
 Core Requirements
