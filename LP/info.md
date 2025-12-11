@@ -1,1 +1,7 @@
+# Leadership Principles
 
+STAR (Situation, Task, Action, Result)
+
+[10 common job interview questions (HBR)](https://hbr.org/2021/11/10-common-job-interview-questions-and-how-to-answer-them) </br>
+[How to Answer an Open-Ended Question from a Job Candidate](https://hbr.org/2024/04/how-to-answer-an-open-ended-question-from-a-job-candidate)
+[How to Respond to “So, Tell Me About Yourself” in a Job Interview](https://hbr.org/2019/08/how-to-respond-to-so-tell-me-about-yourself-in-a-job-interview)
