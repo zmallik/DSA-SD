@@ -3,7 +3,7 @@ SD - System Design
 
 https://github.com/kdn251/interviews
 
-Apple Interview Guide: https://lnkd.in/gJPp83bn 
+[Apple Interview Guide](https://lnkd.in/gJPp83bn) 
 
 Google Interview Guide: https://lnkd.in/gp3vfgFz 
 
