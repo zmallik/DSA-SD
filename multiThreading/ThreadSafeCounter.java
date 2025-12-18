@@ -1,7 +1,10 @@
-public class ThreadsExample implements Runnable {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class ThreadSafeCounter implements Runnable {
+     
      static AtomicInteger counter = new AtomicInteger(1); // a global counter
 
-     public ThreadsExample() {
+     public ThreadSafeCounter() {
      }
 
      static void incrementCounter() {
@@ -10,13 +13,13 @@ public class ThreadsExample implements Runnable {
 
      @Override
      public void run() {
-          while(counter.get() < 1000){
+          while(counter.get() < 10){
                incrementCounter();
           }
      }
 
      public static void main(String[] args) {
-          ThreadsExample te = new ThreadsExample();
+          ThreadSafeCounter te = new ThreadSafeCounter();
           Thread thread1 = new Thread(te);
           Thread thread2 = new Thread(te);
 
