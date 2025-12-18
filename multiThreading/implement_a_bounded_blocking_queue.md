@@ -111,6 +111,42 @@ final ReentrantLock takeLock;
 ```
 a) Separate locks. b) Producers and consumers can work in parallel. c) Higher throughput under load
 
+- Fairness
+ArrayBlockingQueue
+```
+new ArrayBlockingQueue<>(100, true); // fair
+```
+FIFO lock acquisition, Prevents starvation, Lower throughput
 
+LinkedBlockingQueue
+Always unfair, Higher throughput, Starvation theoretically possible (rare)
 
+Example  
+```
+new ThreadPoolExecutor(
+    core, max, timeout,
+    TimeUnit.SECONDS,
+    new LinkedBlockingQueue<>(1000)
+);
+```
+Common choice because: Throughput matters, Queue absorbs bursts
 
+ArrayBlockingQueue: Systems needing strict backpressure  
+```
+new ArrayBlockingQueue<>(100, true);
+```
+Enforces limits, Prevents request pile-up, Safer in Kubernetes
+
+### SynchronousQueue
+```
+A zero-capacity queue — it never stores elements.
+```
+- “I use SynchronousQueue when I want no queuing, only direct handoff, enforcing immediate backpressure.”
+- put() blocks until a take() happens
+- Direct handoff between producer and consumer
+- use When you want zero buffering: Strict backpressure, Low latency, Tasks must be handled immediately
+- use When tasks are short-lived: CPU-bound work, Fast I/O
+- ex: Dynamic thread scaling: Used by newCachedThreadPool()
+- Real-world examples: Async request handoff, Event dispatch systems, Work stealing / actor-style execution
+
+**backpressure** : Backpressure is when slow consumers force producers to slow down instead of accumulating work.
