@@ -72,5 +72,45 @@ public T poll(long timeout, TimeUnit unit)
 }
 
 ```
-## How does this differ from BlockingQueue?
+### How does this differ from BlockingQueue?
 BlockingQueue is a production-ready abstraction that provides correctness, performance optimizations, fairness options, and rich APIs.
+<img width="846" height="494" alt="Screenshot 2025-12-19 at 4 18 22 AM" src="https://github.com/user-attachments/assets/ec7b97bf-de0c-4730-bfdb-5a1e25801b56" />
+
+#### Key implementations
+ArrayBlockingQueue, LinkedBlockingQueue, PriorityBlockingQueue, SynchronousQueue
+```
+BlockingQueue<Integer> q = new ArrayBlockingQueue<>(10, true);
+```
+- What is fairness?  
+Threads are serviced in roughly FIFO order, preventing starvation.
+Unfair (default behavior): Fast threads can repeatedly acquire the lock Some threads may starve
+```
+new ReentrantLock(); // unfair (default)
+Lock lock = new ReentrantLock(true); // fair, Threads acquire the lock in arrival order. Producers/consumers are not starved
+```
+- Fairness avoids starvation by ordering waiting threads, but it reduces throughput, so most queues are unfair by default.
+<img width="576" height="220" alt="Screenshot 2025-12-19 at 4 27 07 AM" src="https://github.com/user-attachments/assets/8987e4ab-3ec3-42f3-b781-f6c790d44b7c" />
+
+### ArrayBlockingQueue vs LinkedBlockingQueue  
+  ArrayBlockingQueue is array-backed, bounded, and optionally fair; LinkedBlockingQueue is node-based, optionally bounded, and higher-throughput butless predictable in memory usage.
+  - ArrayBlockingQueue is Bounded, memory-efficient, optionally fair, but lower throughput due to a single lock
+  - LinkedBlockingQueue is Higher throughput with dual locks but higher memory usage and unbounded by default
+  <img width="825" height="448" alt="Screenshot 2025-12-19 at 4 29 00 AM" src="https://github.com/user-attachments/assets/8d113749-436c-4069-b0ab-cfe7cbd1fee7" />
+
+- Locking model
+ArrayBlockingQueue </br>
+```
+final ReentrantLock lock;
+```
+a) One lock for both put and take, b) More contention, c) Simpler, more predictable  
+
+LinkedBlockingQueue  
+```
+final ReentrantLock putLock;
+final ReentrantLock takeLock;
+```
+a) Separate locks. b) Producers and consumers can work in parallel. c) Higher throughput under load
+
+
+
+
