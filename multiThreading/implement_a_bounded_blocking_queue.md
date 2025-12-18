@@ -150,3 +150,55 @@ A zero-capacity queue — it never stores elements.
 - Real-world examples: Async request handoff, Event dispatch systems, Work stealing / actor-style execution
 
 **backpressure** : Backpressure is when slow consumers force producers to slow down instead of accumulating work.
+<img width="620" height="231" alt="Screenshot 2025-12-19 at 4 49 06 AM" src="https://github.com/user-attachments/assets/a0d1c0f8-a118-47c9-9065-37d04c1ba50b" />
+
+Cached thread pool Uses SynchronousQueue, Threads grow up to demand, Risky if tasks are slow
+```
+Executors.newCachedThreadPool();
+```
+
+
+Fixed thread pool Uses unbounded queue, Thread count never grows beyond n
+```
+Executors.newFixedThreadPool(n);
+```
+
+```
+“Queue choice controls whether the system scales by threads or by buffering.”
+```
+
+-  Why does Executors.newFixedThreadPool use LinkedBlockingQueue?
+Design intent, Predictability over throughput., Fixed number of threads, Unlimited queue, Simple mental model
+```
+new ThreadPoolExecutor(
+    n, n,
+    0L, TimeUnit.MILLISECONDS,
+    new LinkedBlockingQueue<>()
+);
+```
+
+Why this is controversial
+
+⚠️ Problems:
+
+No backpressure, Tasks pile up, Risk of OOM, Latency explosion, 
+
+✔ Benefit: Simple API, Avoids task rejection, Backward compatibility, Modern best practice, Avoid Executors.newFixedThreadPool in production.
+
+Instead:
+```
+new ThreadPoolExecutor(
+    n, n,
+    0L, TimeUnit.MILLISECONDS,
+    new ArrayBlockingQueue<>(1000),
+    new ThreadPoolExecutor.CallerRunsPolicy()
+);
+```
+
+### summary
+
+- SynchronousQueue enforces immediate backpressure via direct handoff
+- Queue choice defines how backpressure is applied
+- Thread pool sizing is tightly coupled with queue behavior
+- newFixedThreadPool favors simplicity but risks unbounded memory growth
+
