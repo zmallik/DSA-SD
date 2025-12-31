@@ -8,6 +8,8 @@ STAR (Situation, Task, Action, Result)
 [salary expectations](https://hbr.org/2023/02/how-to-answer-what-are-your-salary-expectations)</br>
 [strengths & weaknesses](https://hbr.org/2023/05/how-to-answer-what-are-your-strengths-and-weaknesses)
 
+[Ex google HR Manager](https://www.youtube.com/watch?v=T__1QViXUxk)
+
 
 - Tell me about a time you pushed back without authority
 - Difficult coworker
