@@ -1,4 +1,6 @@
 
 https://codezym.com/lld/microsoft </br>
 
-https://medium.com/@prashant558908/microsoft-most-frequent-low-level-design-questions-from-recent-interviews-b9ba1da387df
+https://medium.com/@prashant558908/microsoft-most-frequent-low-level-design-questions-from-recent-interviews-b9ba1da387df </br>
+[LLD-hello world](https://www.hellointerview.com/learn/low-level-design/in-a-hurry/patterns)
+
