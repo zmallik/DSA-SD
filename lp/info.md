@@ -7,7 +7,7 @@ STAR (Situation, Task, Action, Result)
 [How to Respond to “So, Tell Me About Yourself” in a Job Interview](https://hbr.org/2019/08/how-to-respond-to-so-tell-me-about-yourself-in-a-job-interview)</br>
 [salary expectations](https://hbr.org/2023/02/how-to-answer-what-are-your-salary-expectations)</br>
 [strengths & weaknesses](https://hbr.org/2023/05/how-to-answer-what-are-your-strengths-and-weaknesses)</br>
-[Ex Recruiter (yourube)](https://www.youtube.com/watch?v=T__1QViXUxk)</br>
+[Ex google Recruiter (youtube)](https://www.youtube.com/watch?v=T__1QViXUxk)</br>
 
 
 - Tell me about a time you pushed back without authority
