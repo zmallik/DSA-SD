@@ -35,4 +35,13 @@ This is the classic question they generally ask
 17. Design a Notification System
 18. Design a Distributed Messaging System
 19. Design a Scalable Chat Application
-20. Design a Job Scheduler
+20. Design a Job Scheduler </br>
+
+ Design a URL Shortener (SQL vs NoSQL? Collision handling?)
+ Design a Rate Limiter (Token Bucket vs Leaky Bucket).</br>
+ Design WhatsApp (How to handle "Last Seen" for 1B users?) </br>
+ Design Instagram Feed (Fan-out on Write vs Read). </br>
+ Design a Web Crawler (Politeness & loop detection). </br>
+ Design Typeahead (Tries at scale). </br>
+ Design Uber (Geo-hashing & QuadTrees). </br>
+ Design a Notification Service (Reliability vs Latency). </br>
