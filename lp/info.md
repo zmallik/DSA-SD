@@ -14,3 +14,11 @@ STAR (Situation, Task, Action, Result)
 - Tell me about a time you pushed back without authority
 - Difficult coworker
 - Failed project
+
+
+ - Tell me about a time you disagreed with a requirement. (Do you have a voice?) </br>
+ - Describe a time you crashed production. (Do you own mistakes?) </br>
+ - How do you handle a lazy teammate? </br>
+ - Tell me about a time you had to learn something overnight. </br>
+ -  Why do you want to leave your current comfortable job? </br>
+ -  What is your biggest technical regret? </br>
