@@ -1,6 +1,6 @@
 # Design an In-Memory POSIX File System
 
-## Requirements
+## 1.Requirements
 
 ### Functional
 
@@ -22,3 +22,24 @@ Efficient path lookup </br>
 In-memory only (no persistence) </br>
 Atomicity guarantees (no partial updates) </br>
 Scalable to many files/directories </br>
+
+
+## 2. High-Level Architecture
+
+```
+FileSystem
+ ├── Root Directory (/)
+ ├── Path Resolver
+ ├── Lock Manager
+ └── Inode Manager
+```
+
+ Key idea:
+
+Everything is represented as nodes (inodes). </br>
+Directories map names → child nodes. </br>
+Files store byte content. </br>
+
+## 3. Core Data Model
+
+
