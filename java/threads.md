@@ -14,7 +14,8 @@ What is the difference between start() and run() in Java threads?</r>
 run() contains the thread’s logic, but calling it directly will execute the code in the same thread, not a new one.
 
 What happens if we call start() twice on the same thread object?
-> A thread in Java can be started only once. Once a thread finishes execution, it cannot be restarted. The JVM does not allow a thread to move from TERMINATED → RUNNABLE
+> ❌ It causes a runtime exception. (java.lang.IllegalThreadStateException)
+A thread in Java can be started only once. Once a thread finishes execution, it cannot be restarted. The JVM does not allow a thread to move from TERMINATED → RUNNABLE
 
 What are the different states of a thread in Java? Can you name and briefly explain them?
 > A Java thread moves from NEW → RUNNABLE → (BLOCKED / WAITING / TIMED_WAITING) → TERMINATED depending on execution and synchronization.
@@ -48,6 +49,20 @@ More control over locking
 Preferred in real projects
 Cons
 Slightly more code
+```
+Difference Between sleep() and wait()
+> sleep() pauses a thread for a fixed time without releasing the lock, whereas wait() releases the lock and waits until another thread calls notify() or notifyAll().
+
+> Thread.sleep(): Pauses the current thread for a fixed time. Does NOT release the lock. Belongs to Thread class.Used for time-based delay
+
+> Object.wait(): Causes the thread to wait until notified, Releases the lock (VERY IMPORTANT), Belongs to Object class, Used for inter-thread communication
+
+```
+Thread.sleep(1000); // 1 second
+
+synchronized(obj) {
+    obj.wait();
+}
 ```
 
 
